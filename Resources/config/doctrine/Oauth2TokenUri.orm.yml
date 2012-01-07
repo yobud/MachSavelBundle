@@ -1,0 +1,6 @@
+Mach\SavelBundle\Entity\Oauth2TokenUri:
+    type: entity
+    fields:
+        access_token_param_name:
+            type: string
+            length: 100

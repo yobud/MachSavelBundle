@@ -1,0 +1,2 @@
+Mach\SavelBundle\Entity\Oauth2TokenBearer:
+    type: entity

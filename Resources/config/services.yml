@@ -1,0 +1,11 @@
+parameters:
+    mach_savel.snufkin.manager.class: Mach\SavelBundle\Snufkin\SnufkinManager
+    mach_savel.bridge.fos_user_bundle.class: Mach\SavelBundle\UserBridge\FOSUserBridge
+
+services:
+    mach_savel.snufkin.manager:
+        class: %mach_savel.snufkin.manager.class%
+        arguments: [@service_container, @router]
+    mach_savel.bridge.fos_user_bundle:
+        class: %mach_savel.bridge.fos_user_bundle.class%
+        arguments: [@fos_user.user_manager.default]

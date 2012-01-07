@@ -1,0 +1,7 @@
+MachSavelBundle_connect:
+    pattern:  /connect/{service}
+    defaults: { _controller: MachSavelBundle:Snufkin:connect }
+
+MachSavelBundle_confirm:
+    pattern:  /connect/{service}/confirm
+    defaults: { _controller: MachSavelBundle:Snufkin:confirm }

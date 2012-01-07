@@ -1,0 +1,9 @@
+Mach\SavelBundle\Entity\Oauth2TokenMac:
+    type: entity
+    fields:
+        access_token_algorithm:
+            type: string
+            length: 50
+        access_token_secret:
+            type: string
+            length: 255

@@ -1,0 +1,38 @@
+Mach\SavelBundle\Entity\Oauth2Token:
+    type: mappedSuperclass
+    table: mach_savel_oauth2_token
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: type
+        type: string
+        length: 6
+    discriminatorMap:
+        uri:    Oauth2TokenUri
+        bearer: Oauth2TokenBearer
+        mac:    Oauth2TokenMac
+        oauth:  Oauth2TokenOauth
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        service_name:
+            type: string
+            length: 255
+        client_id:
+            type: string
+            length: 255
+        client_secret:
+            type: string
+            length: 255
+        access_token:
+            type: string
+            length: 255
+        expires_at:
+            type: datetime
+        refresh_token:
+            type: string
+            length: 255
+        scope:
+            type: string
+            length: 255
