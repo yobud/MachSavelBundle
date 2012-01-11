@@ -62,8 +62,7 @@ class SnufkinController extends Controller
         $snufkin_manager = $this->get('mach_savel.snufkin.manager');
         $snufkin = $snufkin_manager->getSnufkin($service);
         
-        $token = $snufkin->confirm($code, 'http://symfony2.dev.tld.com/connect/Google/confirm');
-        //$token = $snufkin->confirm($code);
+        $token = $snufkin->confirm($code);
         
         $user = $snufkin->callUserBridge($token);
         
