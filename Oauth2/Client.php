@@ -122,8 +122,15 @@ abstract class Client
         }
 
         $info = $response['result'];
-        
+
         $token = null;
+
+        // Facebook returns a string access_token=X&expires=Y
+        if(!is_array($info)) {
+            parse_str($response['result'], $info);
+            $info['token_type'] = isset($info['token_type']) ? $info['token_type'] : 'Uri';
+        }
+
         switch ($info['token_type'])
         {
             case 'Bearer':
@@ -144,7 +151,7 @@ abstract class Client
             default:
                 throw new OauthException("Invalid token_type returned.");
         }
-        
+
         $token->setAccessToken($info['access_token']);
         
         if (isset($info['refresh_token']))
